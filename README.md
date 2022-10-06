@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+<h1 align="center" >Projeto E-commerce</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2> 
+    Este é um projeto pessoal, tem como objetivo de práticar e refinar os conhecimentos em React JS com Typescript, juntamente com o consumo de API,
+    a API usada neste projeto pode ser encontrada <a href="https://dummyjson.com"> AQUI </a>
+ </h2>
 
-## Available Scripts
+<h2> 
+ 💻 tecnologias / bibliotecas :
+</h2>
 
-In the project directory, you can run:
+- <strong> `React JS` <strong>
+- <strong> `Typescript` <strong>
+- <strong> `React Router DOM` <strong>
+- <strong> `Axios` <strong>
+- <strong> `Staled-components` <strong>
+- <strong> `Yarn`<strong>
+- <strong> `Hospedagem` <strong> : Netlify
+- <strong> `Estrutura de pastas` <strong> : MVC
 
-### `yarn start`
+<h2>
+    📋 Pré-requisitos
+</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p> Você precisará ter o node e o git instalados na sua máquina</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2>
+    🔧 Usando na sua máquina
+</h2>
+Abra o git bash em uma pasta da sua escolha e execute o comando:
 
-### `yarn test`
+```md
+git clone https://github.com/Alexandresfi/e-commerce.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Em seguida vá para a pasta `/src` e abra o terminal e execute:
 
-### `yarn build`
+```md
+yarn
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+para instalar as dependências, logo em seguida execute o comando:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```md
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este comando irá rodar a aplicação, você poderar ver o resultado abrindo seu navegador e indo para o link: http://localhost:3000/.
