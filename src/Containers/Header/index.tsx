@@ -40,7 +40,7 @@ export function Header() {
           </div>
 
           <ContainerSearch>
-            <input type="text" placeholder="name of the smartphone you want" />
+            <input type="text" placeholder="Qual produto você procura?" />
             <button>
               <img src={IconSearch} alt="search" />
             </button>

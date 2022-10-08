@@ -25,7 +25,7 @@ export function Shelf() {
 
   return (
     <Container>
-      <div>Smartphones and Notebooks</div>
+      <h1>Smartphones e Notebooks</h1>
 
       <ContainerCarrousel ref={carrousel}>
         <Product />
