@@ -39,8 +39,6 @@ export const ContentTopBar = styled.div`
 `
 
 export const ContainerHeader = styled.div`
-    position: sticky;
-    top: 0;
     background-color: white;
 `
 
