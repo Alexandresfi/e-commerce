@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 
 import { api } from "../../services/api";
+import { formatPrices } from "../../utils/formatPrice";
 
-import { ContentProducts, Img, Price, Title, ValueFrist } from "./styles";
+import {
+  BuyButton,
+  ContentProducts,
+  Img,
+  Price,
+  Title,
+  ValueFrist,
+} from "./styles";
 
 interface ProductsProps {
   id: number;
@@ -17,7 +25,7 @@ export function Product() {
   const [products, setProducts] = useState<ProductsProps[]>([]);
 
   const GetProducts = async () => {
-    const { data } = await api.get("/products?limit=18");
+    const { data } = await api.get("/products?limit=10");
     setProducts(data.products);
   };
 
@@ -31,9 +39,14 @@ export function Product() {
         <ContentProducts key={product.id}>
           <Img src={product.images[0]} alt="" />
           <Title>{product.title}</Title>
-          <ValueFrist>de R$ {product.price}</ValueFrist>
-          <Price>Por apenas {product.price - product.discountPercentage}</Price>
-          <button>Comprar</button>
+          <ValueFrist>
+            de <span>{formatPrices(product.price)}</span>
+          </ValueFrist>
+          <Price>
+            Por apenas{" "}
+            {formatPrices(product.price - product.discountPercentage)}
+          </Price>
+          <BuyButton>Comprar</BuyButton>
         </ContentProducts>
       ))}
     </>

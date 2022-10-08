@@ -27,23 +27,22 @@ export const ContainerButtons = styled.div`
     justify-content: space-between;
 
     position: absolute;
-    top: 32px;
-    bottom: 0;
-    
+    top: 58px;
+    bottom: 170px;
+
 `
 
 export const Button = styled.button`
 
-    border-radius: 8px;
+    background: transparent;
+
+    border-radius: 5px;
     border: none;
-
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 98%, rgba(0,212,255,1) 100%);
-
+    
     z-index: 2;
-
+    
     transition: all 1s;
-
+    
     .left {
         transform: rotate(180deg);
     }
