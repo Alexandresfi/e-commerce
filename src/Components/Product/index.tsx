@@ -21,11 +21,11 @@ interface ProductsProps {
   images: string[];
 }
 
-export function Product() {
+export function Product(props: { require: string }) {
   const [products, setProducts] = useState<ProductsProps[]>([]);
 
   const GetProducts = async () => {
-    const { data } = await api.get("/products?limit=10");
+    const { data } = await api.get(props.require);
     setProducts(data.products);
   };
 
