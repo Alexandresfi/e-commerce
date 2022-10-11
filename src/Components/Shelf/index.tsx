@@ -8,7 +8,7 @@ import {
 import Arrows from "../../assets/right-arrow.png";
 import { useRef } from "react";
 
-export function Shelf() {
+export function Shelf(props: { require: string; titles: string }) {
   const carrousel = useRef<HTMLDivElement>(null);
 
   const handleLeftClick = (): void => {
@@ -25,10 +25,10 @@ export function Shelf() {
 
   return (
     <Container>
-      <h1>Smartphones e Notebooks</h1>
+      <h1>{props.titles}</h1>
 
       <ContainerCarrousel ref={carrousel}>
-        <Product />
+        <Product require={props.require} />
       </ContainerCarrousel>
 
       <ContainerButtons>
