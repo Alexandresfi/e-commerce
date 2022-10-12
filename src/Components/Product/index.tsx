@@ -35,7 +35,7 @@ export function Product(props: { require: string }) {
 
   useEffect(() => {
     GetProducts();
-  }, []);
+  });
 
   return (
     <>
