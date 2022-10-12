@@ -14,6 +14,10 @@ import IconCart from "../../assets/cart.png";
 import IconSearch from "../../assets/search.png";
 
 export function Header() {
+  const handleClick = () => {
+    alert("Em breve estará disponível");
+  };
+
   return (
     <header>
       <TopBar>
@@ -35,20 +39,20 @@ export function Header() {
 
       <ContainerHeader>
         <ContentHeadert>
-          <div>
+          <a href="/#">
             <img src={IconLogo} alt="logo" />
-          </div>
+          </a>
 
           <ContainerSearch>
             <input type="text" placeholder="Qual produto você procura?" />
-            <button>
+            <button onClick={handleClick}>
               <img src={IconSearch} alt="search" />
             </button>
           </ContainerSearch>
 
           <div className="container">
-            <img src={IconLogin} alt="login" />
-            <img src={IconCart} alt="cart" />
+            <img src={IconLogin} alt="login" onClick={handleClick} />
+            <img src={IconCart} alt="cart" onClick={handleClick} />
           </div>
         </ContentHeadert>
       </ContainerHeader>

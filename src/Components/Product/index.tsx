@@ -29,6 +29,10 @@ export function Product(props: { require: string }) {
     setProducts(data.products);
   };
 
+  const handleClick = () => {
+    alert("Em breve estará disponível");
+  };
+
   useEffect(() => {
     GetProducts();
   }, []);
@@ -46,7 +50,7 @@ export function Product(props: { require: string }) {
             Por apenas{" "}
             {formatPrices(product.price - product.discountPercentage)}
           </Price>
-          <BuyButton>Comprar</BuyButton>
+          <BuyButton onClick={handleClick}>Comprar</BuyButton>
         </ContentProducts>
       ))}
     </>
