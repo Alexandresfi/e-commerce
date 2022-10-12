@@ -7,12 +7,16 @@ export const Container = styled.div`
 
     position: relative;
 
+    h1 {
+        padding: 0.75rem 0;
+    }
 `
 
 export const ContainerCarrousel = styled.div`
     display: flex;
     align-items: center;
-    gap: 0 1.1rem;
+    gap: 0 17px;
+    justify-content: space-between;
 
     z-index: 3;
 
