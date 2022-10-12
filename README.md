@@ -4,6 +4,10 @@
     Este é um projeto pessoal, tem como objetivo de práticar e refinar os conhecimentos em React JS com Typescript, juntamente com o consumo de API,
     a API usada neste projeto pode ser encontrada <a href="https://dummyjson.com"> AQUI </a>
  </h2>
+ 
+ <p> No momento o projeto está em desenvolvimento, a versão mobile ainda não está pronta, por favor, seja apenas no desktop por enquanto. 
+    <a href="https://ecommerce-smart-shopping.netlify.app/">LINK</a> 
+ </p>
 
 <h2> 
  💻 tecnologias / bibliotecas :
