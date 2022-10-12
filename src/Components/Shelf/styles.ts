@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     max-width: 78.25rem;
     width: 100%;
-    margin: auto;
+    margin: 1.5rem auto;
 
     position: relative;
 
@@ -31,8 +31,8 @@ export const ContainerButtons = styled.div`
     justify-content: space-between;
 
     position: absolute;
-    top: 58px;
-    bottom: 170px;
+    top: 77px;
+    bottom: 182px;
 
 `
 
@@ -46,6 +46,8 @@ export const Button = styled.button`
     z-index: 2;
     
     transition: all 1s;
+
+    padding: 0 6px;
     
     .left {
         transform: rotate(180deg);
