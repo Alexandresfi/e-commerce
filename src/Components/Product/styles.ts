@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const ContentProducts = styled.div`
-    max-width: 25rem;
+    max-width: 18.75rem;
     width: 100%;
 
     display: flex;
@@ -21,6 +21,7 @@ export const ContentProducts = styled.div`
         max-width: 23rem;
         width: 100%;
         padding: 0 10px;
+        text-transform: uppercase;
     }
 
     &:hover {
@@ -29,9 +30,10 @@ export const ContentProducts = styled.div`
 `
 
 export const Img = styled.img`
-    width: 24.8rem;
+    width: 18rem;
     height: 21.5rem;
-    margin: auto;
+
+    margin: 5px auto 0;
     border-radius: 8px;
     
     object-fit: cover;
@@ -40,12 +42,21 @@ export const Img = styled.img`
 export const Title = styled.p`
     font-weight: bold;
     text-align: left;
-    text-transform: uppercase;
 
     font-size: 1.2rem;
     letter-spacing: 0.05em;
     line-height: 20px;
     margin: 10px 0;
+
+    min-height: 41px;
+
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;    
+   max-height: 41px;     
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
 `
 
 export const ValueFrist = styled.p`
@@ -78,7 +89,6 @@ export const BuyButton = styled.button`
     width: 97%;
     border: none;
     border-radius: 8px;
-    text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
