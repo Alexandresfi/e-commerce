@@ -1,9 +1,12 @@
+import { Form } from "./Form";
+import { Institucional } from "./institucional";
 import { ContainerFooter } from "./styles";
 
 export function Footer() {
   return (
     <ContainerFooter>
-      <h1>Footer</h1>
+      <Form />
+      <Institucional />
     </ContainerFooter>
   );
 }
