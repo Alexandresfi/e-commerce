@@ -54,4 +54,8 @@ export const ContainerBanner = styled.div`
         background: linear-gradient(90deg, rgba(0,0,0,0.1741071428571429) 16%, rgba(0,206,255,1) 100%);
 
     }
+
+    @media (max-width: 912px) {
+        padding: 0 20px;
+    }
 `

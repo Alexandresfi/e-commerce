@@ -9,6 +9,12 @@ export const Container = styled.div`
 
     h1 {
         padding: 0.75rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    @media (max-width: 913px) {
+        padding: 0 20px;
     }
 `
 
@@ -48,6 +54,14 @@ export const Button = styled.button`
     transition: all 1s;
 
     padding: 0 6px;
+
+    @media(max-width: 913px) {
+
+        &:not(transform) {
+            margin-right: 40px;
+        }
+    }
+
     
     .left {
         transform: rotate(180deg);

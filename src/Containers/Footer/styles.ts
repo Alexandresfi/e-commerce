@@ -12,9 +12,6 @@ export const ContainerForm = styled.div`
 
     background-color: #00BFFF;
 
-    @media(max-width: 660px) {
-        padding: 0 5px;
-    }
 `
 
 export const Content = styled.form`
@@ -27,6 +24,10 @@ export const Content = styled.form`
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+
+    @media(max-width: 913px) {
+        padding: 2rem 20px;
+    }
 `
 
 export const Texts = styled.div`
