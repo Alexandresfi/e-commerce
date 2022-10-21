@@ -9,6 +9,7 @@ export const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
 
     h3 {
         text-transform: uppercase;
@@ -19,6 +20,14 @@ export const Content = styled.div`
     }
 
     padding-bottom: 2rem;
+
+    @media (max-width: 660px) {
+        padding: 0 10px;
+
+        div {
+            margin: 10px auto;
+        }
+    }
 `
 
 export const ListLinks = styled.ul`

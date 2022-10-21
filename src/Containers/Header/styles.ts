@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface Modal {
+    modal: boolean
+}
+
 export const TopBar = styled.div`
     background-color: #00BFFF;
 `
@@ -112,4 +116,65 @@ export const ContainerSearch = styled.div`
             color: white;
         }
     }
+
+    @media (max-width: 913px) {
+        max-width: 90vw;
+        width: 100%;
+        margin: 0 auto 20px auto;
+    }
+`
+
+export const Container = styled.div`
+    background-color: white;
+`
+
+export const ContainerMobile = styled.ul`
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    list-style: none;
+
+    background-color: white;
+
+    li {
+        button {
+            border: none;
+            background-color: transparent;
+        }
+    }
+`
+
+export const MiniCart = styled.button<Modal>`
+
+    width: ${(props)=> props.modal ? '90vw' : 0};
+    height: ${(props)=> props.modal ? 0 : '100vh'};
+    padding: ${(props)=> props.modal ? '22px 13px' : 0};
+
+    border: none;
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    left: ${(props)=> props.modal ? '10%' : '100%'};
+
+    
+    font-size: ${(props)=> props.modal ? '2rem' : 0};
+    font-weight: 500;
+    background-color: transparent;
+
+    transition: all ease 0.5s;
+
+    div{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: ${(props)=> props.modal ? '90%' : 0};
+        height: ${(props)=> props.modal ? '100vh' : 0};
+        background-color: blue;
+    }
+
 `

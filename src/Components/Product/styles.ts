@@ -27,6 +27,10 @@ export const ContentProducts = styled.div`
     &:hover {
         border-color: black;
     }
+
+    @media (max-width: 913px) {
+        max-width: 12.75rem;
+    }
 `
 
 export const Img = styled.img`
