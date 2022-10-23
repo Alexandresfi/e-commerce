@@ -21,12 +21,12 @@ export function Form() {
     <ContainerForm>
       <Content>
         <Texts>
-          <h2>Receba Novidades</h2>
-          <p>Preencha seus dados para receber novidades em seu e-mail</p>
+          <h2>Receive news</h2>
+          <p>Fill in your details to receive news in your email</p>
         </Texts>
 
         <ContentForm action="">
-          <input type="text" placeholder="Nome" required />
+          <input type="text" placeholder="Name" required />
 
           <input type="email" name="email" placeholder="E-mail" required />
 
@@ -34,12 +34,12 @@ export function Form() {
             type="tel"
             name="phone"
             id=""
-            placeholder="Celular"
+            placeholder="Cellphone"
             value={numberCellPhone}
             onChange={(e) => handleChange(e.target.value)}
             required
           />
-          <button type="submit">Cadastrar</button>
+          <button type="submit">Register</button>
         </ContentForm>
       </Content>
     </ContainerForm>

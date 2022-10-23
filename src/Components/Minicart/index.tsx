@@ -31,7 +31,7 @@ export function MiniCart() {
         <DrawerOverlay />
         <DrawerContent>
           <HeaderMinicart>
-            <p>Minhas Compras</p>
+            <p>My shopping</p>
             <button onClick={onClose}>X</button>
           </HeaderMinicart>
 
@@ -47,10 +47,10 @@ export function MiniCart() {
               _hover={{ color: "#000" }}
               onClick={onClose}
             >
-              Continuar Comprando
+              Keep buying
             </Button>
             <Button colorScheme="blue" _hover={{ color: "#000" }}>
-              Finalizar Compras
+              Checkout
             </Button>
           </FooterMinicart>
         </DrawerContent>

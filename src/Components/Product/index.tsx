@@ -50,7 +50,7 @@ export function Product(props: { require: string }) {
             Por apenas{" "}
             {formatPrices(product.price - product.discountPercentage)}
           </Price>
-          <BuyButton onClick={handleClick}>Comprar</BuyButton>
+          <BuyButton onClick={handleClick}>Buy</BuyButton>
         </ContentProducts>
       ))}
     </>
