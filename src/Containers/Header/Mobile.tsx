@@ -1,18 +1,16 @@
-import IconLogin from "../../assets/login.png";
 import IconLogo from "../../assets/logo.png";
 import IconSearch from "../../assets/search.png";
 
 import { Container, ContainerMobile, ContainerSearch } from "./styles";
-import { MiniCart } from "../Minicart";
+import { MiniCart } from "../../Components/Minicart";
+import { Login } from "../../Components/Modal/Login";
 
 export function HeaderMobile() {
   return (
     <Container>
       <ContainerMobile>
         <li>
-          <button>
-            <img src={IconLogin} alt="login" />
-          </button>
+          <Login />
         </li>
 
         <li>
@@ -29,7 +27,7 @@ export function HeaderMobile() {
       </ContainerMobile>
 
       <ContainerSearch>
-        <input type="text" placeholder="Qual produto você procura?" />
+        <input type="text" placeholder="which product are you looking for?" />
         <button>
           <img src={IconSearch} alt="search" />
         </button>
