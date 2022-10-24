@@ -5,7 +5,7 @@ import IconSearch from "../../assets/search.png";
 import { ContainerTopBar } from "./TopBar";
 import { HeaderMobile } from "./Mobile";
 import { MiniCart } from "../../Components/Minicart";
-import { Login } from "../../Components/Modal/Login";
+import { Login } from "../../Components/Modal";
 // import { useEffect } from "react";
 
 export function Header() {

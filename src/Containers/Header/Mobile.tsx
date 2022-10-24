@@ -3,7 +3,7 @@ import IconSearch from "../../assets/search.png";
 
 import { Container, ContainerMobile, ContainerSearch } from "./styles";
 import { MiniCart } from "../../Components/Minicart";
-import { Login } from "../../Components/Modal/Login";
+import { Login } from "../../Components/Modal";
 
 export function HeaderMobile() {
   return (
