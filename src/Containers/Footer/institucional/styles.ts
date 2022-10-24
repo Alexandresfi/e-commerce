@@ -13,6 +13,8 @@ export const Content = styled.div`
 
     h3 {
         text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 600;
     }
 
     img {
@@ -43,6 +45,11 @@ export const ListLinks = styled.ul`
         font-size: 12px;
 
         margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+            color: black;
+        }
         
     }
 
