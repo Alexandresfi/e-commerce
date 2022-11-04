@@ -30,7 +30,9 @@ export function Product(props: { require: string }) {
   };
 
   const handleClick = () => {
-    alert("Em breve estará disponível");
+    localStorage.getItem("ecommerceUser:userData")
+      ? alert("Estamos trabalhando para isto")
+      : alert("To make a purchase you need to be logged in.");
   };
 
   useEffect(() => {

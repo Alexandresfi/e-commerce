@@ -55,12 +55,12 @@ export const Title = styled.p`
     min-height: 41px;
 
     overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;    
-   max-height: 41px;     
-   -webkit-line-clamp: 2;
-   -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;    
+    max-height: 41px;     
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 `
 
 export const ValueFrist = styled.p`

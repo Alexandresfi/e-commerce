@@ -4,7 +4,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   useDisclosure,
-  Input,
   Button,
 } from "@chakra-ui/react";
 
@@ -12,6 +11,7 @@ import IconCart from "../../assets/cart.png";
 
 import { useRef } from "react";
 import { FooterMinicart, HeaderMinicart } from "./styles";
+import { ProductMiniCart } from "./ProductMiniCart";
 
 export function MiniCart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,7 +36,7 @@ export function MiniCart() {
           </HeaderMinicart>
 
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <ProductMiniCart />
           </DrawerBody>
 
           <FooterMinicart>
