@@ -30,3 +30,105 @@ export const FooterMinicart = styled(DrawerFooter)`
         width: 100%;
     }
 `
+
+export const ContainerProduct = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    width: 99%;
+
+    .closed {
+        cursor: pointer;
+    }
+`
+
+export const ContainerImage = styled.div`
+    max-width: 5rem;
+    height: 6rem;
+    width: 100%;
+    
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+`
+
+export const Description = styled.div`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;    
+    max-height: 41px;     
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  
+`
+
+export const ContainerPrice = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+`
+
+export const Discount = styled.span`
+    font-size: 0.9rem;
+    color: red;
+    text-align: center;
+    text-decoration: line-through;
+    letter-spacing: -0.05em;
+    font-weight: 400;
+`
+
+export const Price = styled.span`
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+`
+
+export const Quantity = styled.div`
+    max-width: 6rem;
+    width: 100%;
+    height: 2rem;
+    
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    input {
+        border: 1px solid black;
+        border-bottom: none;
+        border-top: none;
+
+
+        max-width: 2rem;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 5px;
+        
+
+        text-align: center;
+        
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;  
+
+        height: 100%;
+        
+        display: flex;
+        align-items: flex-end;
+
+        cursor: pointer;
+    }
+`
