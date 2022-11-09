@@ -12,7 +12,26 @@ import {
 } from "./styles";
 
 export function ProductMiniCart() {
-  const { products, deleteProduct } = UseMinicart();
+  const { products, deleteProduct, updateQuantity } = UseMinicart();
+
+  const decrement = (id: number, totalquantity: number) => {
+    const infoQuantity = {
+      id,
+      quantity: (totalquantity -= 1),
+    };
+
+    updateQuantity(infoQuantity);
+  };
+
+  const increment = (id: number, totalquantity: number) => {
+    const infoQuantity = {
+      id,
+      quantity: (totalquantity += 1),
+    };
+
+    updateQuantity(infoQuantity);
+  };
+
   return (
     <Container>
       {products?.map((product) => (
@@ -31,9 +50,15 @@ export function ProductMiniCart() {
             </ContainerPrice>
 
             <Quantity>
-              <p>-</p>
+              <button onClick={() => decrement(product.id, product.quantity)}>
+                -
+              </button>
+
               <input type="number" minLength={1} value={product.quantity} />
-              <p>+</p>
+
+              <button onClick={() => increment(product.id, product.quantity)}>
+                +
+              </button>
             </Quantity>
           </ContainerDescription>
           <div className="closed">

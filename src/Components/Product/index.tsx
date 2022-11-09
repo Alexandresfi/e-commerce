@@ -20,16 +20,16 @@ export interface ProductsProps {
   discountPercentage: number;
   rating: number;
   thumbnail: string;
-  quantity?: number;
+  quantity: number;
 }
 
 export function Product(props: { require: string }) {
-  const [products, setProducts] = useState<ProductsProps[]>([]);
-  const { addProductMinicart } = UseMinicart();
+  const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
+  const { addProductMinicart, updateQuantity, products } = UseMinicart();
 
   const GetProducts = async () => {
     const { data } = await api.get(props.require);
-    setProducts(data.products);
+    setProductsAPI(data.products);
   };
 
   const handleClick = (product: ProductsProps) => {
@@ -41,16 +41,26 @@ export function Product(props: { require: string }) {
   useEffect(() => {
     GetProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [products.length]);
+  }, [productsAPI.length]);
 
   const addMinicart = (product: ProductsProps) => {
-    product.quantity = 1;
-    addProductMinicart(product);
+    const index = products.findIndex((item) => item.id === product.id);
+    console.log(index);
+    if (index > 0) {
+      const infoQuantity = {
+        id: product.id,
+        quantity: (product.quantity += 1),
+      };
+      updateQuantity(infoQuantity);
+    } else {
+      product.quantity = 1;
+      addProductMinicart(product);
+    }
   };
 
   return (
     <>
-      {products?.map((product) => (
+      {productsAPI?.map((product) => (
         <ContentProducts key={product.id}>
           <Img src={product.thumbnail} alt="" />
           <Title>{product.title}</Title>
