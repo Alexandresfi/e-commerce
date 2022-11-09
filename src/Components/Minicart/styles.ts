@@ -31,16 +31,31 @@ export const FooterMinicart = styled(DrawerFooter)`
     }
 `
 
+export const Container = styled.div`
+    gap: 26px;
+    display: flex;
+    flex-direction: column;
+`
+
 export const ContainerProduct = styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 10px;
     
     width: 99%;
 
     .closed {
         cursor: pointer;
+        margin: -4px 0;
     }
+`
+
+export const ContainerDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 6rem;
 `
 
 export const ContainerImage = styled.div`
@@ -119,7 +134,7 @@ export const Quantity = styled.div`
         
     }
 
-    p {
+    button {
         font-size: 1.5rem;
         font-weight: 600;
         text-align: center;  

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { UseMinicart } from "../../hooks/MinicartContext";
 
 import { api } from "../../services/api";
 import { formatPrices } from "../../utils/formatPrice";
@@ -12,38 +13,56 @@ import {
   ValueFrist,
 } from "./styles";
 
-interface ProductsProps {
+export interface ProductsProps {
   id: number;
   title: string;
   price: number;
   discountPercentage: number;
   rating: number;
-  images: string[];
+  thumbnail: string;
+  quantity: number;
 }
 
 export function Product(props: { require: string }) {
-  const [products, setProducts] = useState<ProductsProps[]>([]);
+  const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
+  const { addProductMinicart, updateQuantity, products } = UseMinicart();
 
   const GetProducts = async () => {
     const { data } = await api.get(props.require);
-    setProducts(data.products);
+    setProductsAPI(data.products);
   };
 
-  const handleClick = () => {
+  const handleClick = (product: ProductsProps) => {
     localStorage.getItem("ecommerceUser:userData")
-      ? alert("Estamos trabalhando para isto")
+      ? addMinicart(product)
       : alert("To make a purchase you need to be logged in.");
   };
 
   useEffect(() => {
     GetProducts();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [productsAPI.length]);
+
+  const addMinicart = (product: ProductsProps) => {
+    const index = products.findIndex((item) => item.id === product.id);
+    console.log(index);
+    if (index > 0) {
+      const infoQuantity = {
+        id: product.id,
+        quantity: (product.quantity += 1),
+      };
+      updateQuantity(infoQuantity);
+    } else {
+      product.quantity = 1;
+      addProductMinicart(product);
+    }
+  };
 
   return (
     <>
-      {products?.map((product) => (
+      {productsAPI?.map((product) => (
         <ContentProducts key={product.id}>
-          <Img src={product.images[0]} alt="" />
+          <Img src={product.thumbnail} alt="" />
           <Title>{product.title}</Title>
           <ValueFrist>
             de <span>{formatPrices(product.price)}</span>
@@ -52,7 +71,7 @@ export function Product(props: { require: string }) {
             Por apenas{" "}
             {formatPrices(product.price - product.discountPercentage)}
           </Price>
-          <BuyButton onClick={handleClick}>Buy</BuyButton>
+          <BuyButton onClick={() => handleClick(product)}>Buy</BuyButton>
         </ContentProducts>
       ))}
     </>
