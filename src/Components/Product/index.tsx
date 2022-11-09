@@ -65,11 +65,10 @@ export function Product(props: { require: string }) {
           <Img src={product.thumbnail} alt="" />
           <Title>{product.title}</Title>
           <ValueFrist>
-            de <span>{formatPrices(product.price)}</span>
+            From <span>{formatPrices(product.price)}</span>
           </ValueFrist>
           <Price>
-            Por apenas{" "}
-            {formatPrices(product.price - product.discountPercentage)}
+            For only {formatPrices(product.price - product.discountPercentage)}
           </Price>
           <BuyButton onClick={() => handleClick(product)}>Buy</BuyButton>
         </ContentProducts>

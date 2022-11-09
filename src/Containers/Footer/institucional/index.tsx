@@ -8,57 +8,57 @@ export function Institucional() {
       <ContainerInstitucional>
         <Content>
           <div>
-            <h3>Instituvional</h3>
+            <h3>Institutional</h3>
             <ListLinks>
               <li>
-                <a href="/#">Quem somos</a>
+                <a href="/#">Who we are</a>
               </li>
 
               <li>
-                <a href="/#">Entrega expressa</a>
+                <a href="/#">Fast delivery</a>
               </li>
 
               <li>
-                <a href="/#">Nossas Lojas</a>
+                <a href="/#">Our stores</a>
               </li>
             </ListLinks>
           </div>
 
           <div>
-            <h3>Ajuda</h3>
+            <h3>Help</h3>
             <ListLinks>
               <li>
-                <a href="/#">Política de privacidade</a>
+                <a href="/#">Privacy Policy</a>
               </li>
 
               <li>
-                <a href="/#">Trocas devoluções</a>
+                <a href="/#">Exchanges and returns</a>
               </li>
 
               <li>
-                <a href="/#">Dúvidas frequentes</a>
+                <a href="/#">FAQ</a>
               </li>
 
               <li>
-                <a href="/#">Fale conosco</a>
+                <a href="/#">contact us</a>
               </li>
             </ListLinks>
           </div>
 
           <div>
-            <h3>Formas de pagamento</h3>
+            <h3>Payment methods</h3>
             <img src={Payment} alt="payment" />
           </div>
 
           <div>
-            <h3>Formas de pagamento</h3>
+            <h3>Payment methods</h3>
             <img src={Security} alt="security" />
           </div>
         </Content>
 
         <h1>
-          Esta site foi construido para fins de estudos, portanto não somos uma
-          loja real. Deste já agradeço pela atenção.
+          This site was built for study purposes, therefore we are not a real
+          store. I thank you for your attention.
         </h1>
       </ContainerInstitucional>
     </article>
