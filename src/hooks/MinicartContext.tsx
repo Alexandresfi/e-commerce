@@ -34,7 +34,7 @@ export function MinicatProvider({ children }: ChildrenProps) {
     setProducts([...products, item]);
   };
 
-  const deleteProduct = async (id: number) => {
+  const deleteProduct = (id: number) => {
     const productsFiltered = products.filter((item) => item.id !== id);
     setProducts(productsFiltered);
   };
@@ -53,8 +53,8 @@ export function MinicatProvider({ children }: ChildrenProps) {
   };
 
   const localCopy = useCallback(() => {
-    const savedLocal = async () => {
-      await localStorage.setItem(
+    const savedLocal = () => {
+      localStorage.setItem(
         "ecommerceMinicart:minicartData",
         JSON.stringify(products)
       );
@@ -63,8 +63,8 @@ export function MinicatProvider({ children }: ChildrenProps) {
     savedLocal();
   }, [products]);
 
-  const getProductLocal = async () => {
-    const existProductMiniCart = await localStorage.getItem(
+  const getProductLocal = () => {
+    const existProductMiniCart = localStorage.getItem(
       "ecommerceMinicart:minicartData"
     );
     if (existProductMiniCart) {
@@ -79,7 +79,7 @@ export function MinicatProvider({ children }: ChildrenProps) {
 
   useEffect(() => {
     localCopy();
-  }, [products.length, localCopy]);
+  }, [localCopy]);
 
   return (
     <MinicartContext.Provider
