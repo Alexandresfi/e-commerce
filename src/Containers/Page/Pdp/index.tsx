@@ -16,7 +16,7 @@ export function PageProduct() {
   const GetProducts = async (id: number) => {
     const { data } = await api.get(`products/${id}`);
     setProduct(data);
-    console.log(data);
+    console.log(product);
   };
 
   useEffect(() => {
