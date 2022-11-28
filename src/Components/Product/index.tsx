@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UseMinicart } from "../../hooks/MinicartContext";
 
 import { api } from "../../services/api";
@@ -25,6 +26,7 @@ export interface ProductsProps {
 
 export function Product(props: { require: string }) {
   const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
+  const navigate = useNavigate();
   const { addProductMinicart, updateQuantity, products } = UseMinicart();
 
   const GetProducts = async () => {
@@ -58,10 +60,18 @@ export function Product(props: { require: string }) {
     }
   };
 
+  const handleLink = (id: number) => {
+    localStorage.setItem("product:IdPdp", JSON.stringify(id));
+    navigate("pdp");
+  };
+
   return (
     <>
       {productsAPI?.map((product) => (
-        <ContentProducts key={product.id}>
+        <ContentProducts
+          key={product.id}
+          onClick={() => handleLink(product.id)}
+        >
           <Img src={product.thumbnail} alt="" />
           <Title>{product.title}</Title>
           <ValueFrist>

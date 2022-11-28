@@ -28,6 +28,10 @@ export const ContainerCarrousel = styled.div`
 
     overflow-x: hidden;
     scroll-behavior: smooth;
+
+    @media(max-width: 913px) {
+        gap: 0 9px;
+    }
 `
 
 export const ContainerButtons = styled.div`

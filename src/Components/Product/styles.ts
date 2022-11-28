@@ -29,7 +29,7 @@ export const ContentProducts = styled.div`
     }
 
     @media (max-width: 913px) {
-        max-width: 12.75rem;
+        max-width: 10.75rem;
     }
 `
 
