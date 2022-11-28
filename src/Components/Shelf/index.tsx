@@ -24,23 +24,21 @@ export function Shelf(props: { require: string; titles: string }) {
   };
 
   return (
-    <>
-      <Container>
-        <h1>{props.titles}</h1>
+    <Container>
+      <h1>{props.titles}</h1>
 
-        <ContainerCarrousel ref={carrousel}>
-          <Product require={props.require} />
-        </ContainerCarrousel>
+      <ContainerCarrousel ref={carrousel}>
+        <Product require={props.require} />
+      </ContainerCarrousel>
 
-        <ContainerButtons>
-          <Button onClick={handleLeftClick}>
-            <img src={Arrows} alt="left-arrow" className="left" />
-          </Button>
-          <Button onClick={handleRightClick}>
-            <img src={Arrows} alt="right-arrow" />
-          </Button>
-        </ContainerButtons>
-      </Container>
-    </>
+      <ContainerButtons>
+        <Button onClick={handleLeftClick}>
+          <img src={Arrows} alt="left-arrow" className="left" />
+        </Button>
+        <Button onClick={handleRightClick}>
+          <img src={Arrows} alt="right-arrow" />
+        </Button>
+      </ContainerButtons>
+    </Container>
   );
 }
