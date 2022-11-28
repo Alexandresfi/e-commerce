@@ -21,6 +21,28 @@ export const HeaderMinicart = styled(DrawerHeader)`
 
 `
 
+export const ButtonMinicart = styled.button`
+    position: relative;
+    
+    .counter {
+        position: absolute;
+        top: -23px;
+        left: 6px;
+        width: 28px;
+        background: #00BFFF;
+        height: 28px;
+        border-radius: 50%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+        font-weight: 600;
+        line-height: 1;
+    }
+`
+
 export const FooterMinicart = styled(DrawerFooter)`
     flex-direction: column;
     align-items: center;
@@ -39,15 +61,18 @@ export const Container = styled.div`
 
 export const ContainerProduct = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
+    position: relative;
     
     width: 99%;
 
     .closed {
         cursor: pointer;
         margin: -4px 0;
+        position: absolute;
+        right: 0;
     }
 `
 

@@ -23,13 +23,13 @@ const UserContext = createContext<UserInfoData>({} as UserInfoData);
 export function UserProvider({ children }: ChildrenData) {
   const [userData, setUserData] = useState<UserDataProps>({} as UserDataProps);
 
-  const loadUser = async (data: UserDataProps) => {
+  const loadUser = (data: UserDataProps) => {
     setUserData(data);
-    await localStorage.setItem("ecommerceUser:userData", JSON.stringify(data));
+    localStorage.setItem("ecommerceUser:userData", JSON.stringify(data));
   };
 
-  const logout = async () => {
-    await localStorage.removeItem("ecommerceUser:userData");
+  const logout = () => {
+    localStorage.removeItem("ecommerceUser:userData");
   };
 
   return (

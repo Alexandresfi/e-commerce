@@ -10,18 +10,25 @@ import {
 import IconCart from "../../assets/cart.png";
 
 import { useRef } from "react";
-import { FooterMinicart, HeaderMinicart } from "./styles";
+import { ButtonMinicart, FooterMinicart, HeaderMinicart } from "./styles";
 import { ProductMiniCart } from "./ProductMiniCart";
+import { UseMinicart } from "../../hooks/MinicartContext";
 
 export function MiniCart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
+  const { products } = UseMinicart();
 
   return (
     <>
-      <button ref={btnRef} onClick={onOpen}>
+      <ButtonMinicart ref={btnRef} onClick={onOpen}>
+        {products.length > 0 && (
+          <span className="counter">{products.length}</span>
+        )}
+
         <img src={IconCart} alt="cart" />
-      </button>
+      </ButtonMinicart>
+
       <Drawer
         isOpen={isOpen}
         placement="right"
