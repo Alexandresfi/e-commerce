@@ -41,6 +41,8 @@ export const Img = styled.img`
     border-radius: 8px;
     
     object-fit: cover;
+
+    cursor: pointer;
 `
 
 export const Title = styled.p`
@@ -86,22 +88,4 @@ export const Price = styled.p`
     letter-spacing: 0.05em;
     line-height: 20px;
     margin: 10px 0 20px;
-`
-
-export const BuyButton = styled.button`
-    height: 2.5rem;
-    width: 97%;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    background: #00BFFF;
-    margin: 0 0 10px 0;
-
-    transition: all 0.5s;
-
-    &:hover {
-        background-color:#07a4d9;
-    }
 `

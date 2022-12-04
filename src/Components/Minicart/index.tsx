@@ -9,15 +9,31 @@ import {
 
 import IconCart from "../../assets/cart.png";
 
-import { useRef } from "react";
-import { ButtonMinicart, FooterMinicart, HeaderMinicart } from "./styles";
+import { useEffect, useRef, useState } from "react";
+import {
+  ButtonMinicart,
+  FooterMinicart,
+  HeaderMinicart,
+  TotalPrice,
+} from "./styles";
 import { ProductMiniCart } from "./ProductMiniCart";
 import { UseMinicart } from "../../hooks/MinicartContext";
+import { formatPrices } from "../../utils/formatPrice";
 
 export function MiniCart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
   const { products } = UseMinicart();
+
+  const [finalPrice, setFinalPrice] = useState(0);
+
+  useEffect(() => {
+    setFinalPrice(
+      products.reduce((acc, current) => {
+        return (current.price - current.rating) * current.quantity + acc;
+      }, 0)
+    );
+  }, [products]);
 
   return (
     <>
@@ -47,6 +63,11 @@ export function MiniCart() {
           </DrawerBody>
 
           <FooterMinicart>
+            <TotalPrice>
+              <p>Valor total:</p>
+              <p>{formatPrices(finalPrice)}</p>
+            </TotalPrice>
+
             <Button
               variant="outline"
               background="#00BFFF"

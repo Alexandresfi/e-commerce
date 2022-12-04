@@ -1,4 +1,5 @@
 import { UseMinicart } from "../../hooks/MinicartContext";
+import { Quantity } from "../Quantity";
 import {
   Container,
   ContainerDescription,
@@ -8,29 +9,10 @@ import {
   Description,
   Discount,
   Price,
-  Quantity,
 } from "./styles";
 
 export function ProductMiniCart() {
-  const { products, deleteProduct, updateQuantity } = UseMinicart();
-
-  const decrement = (id: number, totalquantity: number) => {
-    const infoQuantity = {
-      id,
-      quantity: (totalquantity -= 1),
-    };
-
-    updateQuantity(infoQuantity);
-  };
-
-  const increment = (id: number, totalquantity: number) => {
-    const infoQuantity = {
-      id,
-      quantity: (totalquantity += 1),
-    };
-
-    updateQuantity(infoQuantity);
-  };
+  const { products, deleteProduct } = UseMinicart();
 
   return (
     <Container>
@@ -49,17 +31,7 @@ export function ProductMiniCart() {
               <Price>$ {product.price - product.rating}</Price>
             </ContainerPrice>
 
-            <Quantity>
-              <button onClick={() => decrement(product.id, product.quantity)}>
-                -
-              </button>
-
-              <input type="number" minLength={1} value={product.quantity} />
-
-              <button onClick={() => increment(product.id, product.quantity)}>
-                +
-              </button>
-            </Quantity>
+            <Quantity product={product!} />
           </ContainerDescription>
           <div className="closed">
             <button onClick={() => deleteProduct(product.id)}>x</button>
