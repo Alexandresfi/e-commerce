@@ -8,7 +8,7 @@ export const ContainerImagesPDP = styled.div`
 
     display: flex;
     gap: 10px;
-    height: 39.5rem;
+    height: 28.5rem;
     max-width: 40rem;
     width: 100%;
 
@@ -37,6 +37,12 @@ export const ContainerMainImg = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
+
+    img {
+        max-width: 75%;
+        height: 75%;
+        margin: auto;
+    }
 `
 
 export const ButtonSlider = styled.button<Down>`
