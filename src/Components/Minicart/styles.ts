@@ -129,46 +129,16 @@ export const Price = styled.span`
     font-weight: 500;
 `
 
-export const Quantity = styled.div`
-    max-width: 6rem;
-    width: 100%;
-    height: 2rem;
-    
-
-    border: 1px solid black;
-    border-radius: 10px;
-
+export const TotalPrice = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding: 0 5px;
 
+    p {
+        font-size: 1.2rem;
+        font-weight: 500;
 
-    input {
-        border: 1px solid black;
-        border-bottom: none;
-        border-top: none;
-
-
-        max-width: 2rem;
-        width: 100%;
-        height: 100%;
-        padding-bottom: 5px;
-        
-
-        text-align: center;
-        
-    }
-
-    button {
-        font-size: 1.5rem;
-        font-weight: 600;
-        text-align: center;  
-
-        height: 100%;
-        
-        display: flex;
-        align-items: flex-end;
-
-        cursor: pointer;
     }
 `

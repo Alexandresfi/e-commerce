@@ -40,7 +40,7 @@ export function MinicatProvider({ children }: ChildrenProps) {
   };
 
   const updateQuantity = (infoQuantity: QuantityProps) => {
-    if (infoQuantity.quantity > 1) {
+    if (infoQuantity.quantity >= 1) {
       const updateQuantity = products.map((product) =>
         product.id === infoQuantity.id
           ? { ...product, quantity: infoQuantity.quantity }

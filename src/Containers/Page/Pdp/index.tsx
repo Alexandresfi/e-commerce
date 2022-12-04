@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { ProductsProps } from "../../../Components/Product";
 import { api } from "../../../services/api";
+import { ContainerImgPDP } from "./columns/left";
+import { ContainerInfoPDP } from "./columns/right";
 
 import { Container } from "./styles";
 
-interface ProductPdpdProps extends ProductsProps {
+export interface ProductPdpdProps extends ProductsProps {
   images: string[];
 }
 
@@ -16,7 +18,6 @@ export function PageProduct() {
   const GetProducts = async (id: number) => {
     const { data } = await api.get(`products/${id}`);
     setProduct(data);
-    console.log(product);
   };
 
   useEffect(() => {
@@ -32,7 +33,11 @@ export function PageProduct() {
 
   return (
     <Container>
-      <p>Página de produto</p>
+      <ContainerImgPDP
+        productImg={product?.images || []}
+        thumbnail={product?.thumbnail || " "}
+      />
+      <ContainerInfoPDP product={product!} />
     </Container>
   );
 }
