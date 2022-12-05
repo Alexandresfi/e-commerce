@@ -7,8 +7,8 @@ export function BuyButton(props: { product: ProductsProps }) {
 
   const addMinicart = (product: ProductsProps) => {
     const index = products.findIndex((item) => item.id === product.id);
-    console.log(index);
-    if (index > 0) {
+
+    if (index >= 0) {
       const infoQuantity = {
         id: product.id,
         quantity: (product.quantity += 1),

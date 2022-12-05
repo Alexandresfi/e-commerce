@@ -7,5 +7,6 @@ export const Container = styled.div`
     margin: auto;
 
     display: flex;
+    flex-wrap: wrap;
 
 `
