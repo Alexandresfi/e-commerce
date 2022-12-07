@@ -12,7 +12,12 @@ export const ContainerImagesPDP = styled.div`
     max-width: 40rem;
     width: 100%;
 
-position: relative;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        padding: 0 20px;
+    }
+    
 `
 
 export const SilderLeft = styled.ul`
@@ -42,6 +47,16 @@ export const ContainerMainImg = styled.div`
         max-width: 75%;
         height: 75%;
         margin: auto;
+        
+        @media (max-width: 1024px) {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: 1024px) {
+            background-color: #f1f0f040;
+        }
+    
     }
 `
 

@@ -3,6 +3,8 @@ import { ProductsProps } from "../../../Components/Product";
 import { api } from "../../../services/api";
 import { ContainerImgPDP } from "./columns/left";
 import { ContainerInfoPDP } from "./columns/right";
+import { Description } from "./Descripition";
+import { Specifications } from "./Descripition/Specifications";
 
 import { Container } from "./styles";
 
@@ -32,12 +34,16 @@ export function PageProduct() {
   };
 
   return (
-    <Container>
-      <ContainerImgPDP
-        productImg={product?.images || []}
-        thumbnail={product?.thumbnail || " "}
-      />
-      <ContainerInfoPDP product={product!} />
-    </Container>
+    <>
+      <Container>
+        <ContainerImgPDP
+          productImg={product?.images || []}
+          thumbnail={product?.thumbnail || " "}
+        />
+        <ContainerInfoPDP product={product!} />
+      </Container>
+      <Description />
+      <Specifications />
+    </>
   );
 }
