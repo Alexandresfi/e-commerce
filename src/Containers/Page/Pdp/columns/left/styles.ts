@@ -52,11 +52,11 @@ export const ContainerMainImg = styled.div`
             max-width: 100%;
             height: 100%;
         }
-
-        @media (min-width: 1024px) {
-            background-color: #f1f0f040;
-        }
+        
+    }
     
+    @media (min-width: 1024px) {
+                background-color: #f1f0f040;
     }
 `
 
