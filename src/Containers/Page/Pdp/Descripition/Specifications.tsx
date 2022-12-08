@@ -7,7 +7,7 @@ export function Specifications() {
       <SpecificationsText>
         <li>
           <div>
-            <span>teste 1:</span>
+            <span>Lorem 1:</span>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
               eaque autem. Rem odit quia unde explicabo optio, quas error saepe
@@ -19,7 +19,7 @@ export function Specifications() {
 
         <li>
           <div>
-            <span>teste 2:</span>
+            <span>Lorem 2:</span>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
               eaque autem. Rem odit quia unde explicabo optio, quas error saepe

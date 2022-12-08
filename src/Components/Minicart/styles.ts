@@ -92,6 +92,7 @@ export const ContainerImage = styled.div`
         object-fit: cover;
         height: 100%;
         width: 100%;
+        cursor: pointer;
     }
 
 `
@@ -104,6 +105,8 @@ export const Description = styled.div`
     max-height: 41px;     
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    font-weight: bold;
+    cursor: pointer;
   
 `
 

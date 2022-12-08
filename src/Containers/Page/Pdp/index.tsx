@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ProductsProps } from "../../../Components/Product";
 import { api } from "../../../services/api";
 import { ContainerImgPDP } from "./columns/left";
@@ -14,6 +15,7 @@ export interface ProductPdpdProps extends ProductsProps {
 
 export function PageProduct() {
   const [product, setProduct] = useState<ProductPdpdProps>();
+  const navigate = useNavigate();
 
   const IdProduct = localStorage.getItem("product:IdPdp");
 
@@ -23,6 +25,7 @@ export function PageProduct() {
   };
 
   useEffect(() => {
+    !IdProduct && navigate("/");
     GetIdProduct();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [IdProduct]);
