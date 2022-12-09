@@ -53,7 +53,6 @@ export const ContentHeadert = styled.div`
 
     max-width: 78.25rem;
     margin: auto;
-    padding-top: 0.5rem;
 
     img {
         cursor: pointer;
@@ -67,6 +66,16 @@ export const ContentHeadert = styled.div`
         justify-content: space-between;
         align-items: center;
     }
+
+    @media (min-width: 913px){
+        padding: 0 20px;
+    }
+
+    @media (min-width: 1272px){
+        padding: 0.5rem 0 0 0;
+    }
+
+
 `
 
 export const ContainerSearch = styled.div`

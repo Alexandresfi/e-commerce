@@ -6,46 +6,51 @@ import { ContainerTopBar } from "./TopBar";
 import { HeaderMobile } from "./Mobile";
 import { MiniCart } from "../../Components/Minicart";
 import { Login } from "../../Components/Modal";
+import { useSizeScreen } from "../../hooks/UseSizeScreen";
 // import { useEffect } from "react";
 
 export function Header() {
+  const size = useSizeScreen();
+  const lg = 913;
+
   const handleClick = () => {
-    alert("Em breve estará disponível");
+    alert("Will be available soon");
   };
 
-  let sizeScreen = window.screen.width;
+  const toggleLayout = () => {
+    if (size.width > lg) {
+      return (
+        <ContentHeadert>
+          <a href="/#">
+            <img src={IconLogo} alt="logo" />
+          </a>
+
+          <ContainerSearch>
+            <input
+              type="text"
+              placeholder="which product are you looking for?"
+            />
+            <button onClick={handleClick}>
+              <img src={IconSearch} alt="search" />
+            </button>
+          </ContainerSearch>
+
+          <div className="container">
+            <Login />
+
+            <MiniCart />
+          </div>
+        </ContentHeadert>
+      );
+    } else {
+      return <HeaderMobile />;
+    }
+  };
 
   return (
     <header>
       <ContainerTopBar />
-
-      {sizeScreen > 913 ? (
-        <ContainerHeader>
-          <ContentHeadert>
-            <a href="/#">
-              <img src={IconLogo} alt="logo" />
-            </a>
-
-            <ContainerSearch>
-              <input
-                type="text"
-                placeholder="which product are you looking for?"
-              />
-              <button onClick={handleClick}>
-                <img src={IconSearch} alt="search" />
-              </button>
-            </ContainerSearch>
-
-            <div className="container">
-              <Login />
-
-              <MiniCart />
-            </div>
-          </ContentHeadert>
-        </ContainerHeader>
-      ) : (
-        <HeaderMobile />
-      )}
+      <ContainerHeader>{toggleLayout()}</ContainerHeader>
     </header>
   );
 }
