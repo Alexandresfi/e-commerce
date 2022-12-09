@@ -17,7 +17,15 @@ export const ContainerDescription = styled.section`
             text-align: center;
         }
     }
-    `
+    
+     @media(min-width: 1053px){
+        padding: 0 20px;
+    }
+
+    @media(min-width: 1278px){
+        padding: 0;
+    }
+`
 
 export const DescriptionText = styled.p`
     font-size: 1.1rem;
@@ -29,7 +37,7 @@ export const ContainerSpecifications = styled.section`
     width: 100%;
     margin: 0 auto 2rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1272px) {
         padding: 0 20px;
     }
 
@@ -37,9 +45,11 @@ export const ContainerSpecifications = styled.section`
         font-weight: bold;
         font-size: 1.5rem;
         @media (max-width: 1024px) {
-        text-align: center;
+            text-align: center;
         }
     }
+
+
 `
 
 export const SpecificationsText = styled.ul`
