@@ -1,9 +1,9 @@
 import IconLogo from "../../assets/logo.png";
-import IconSearch from "../../assets/search.png";
 
-import { Container, ContainerMobile, ContainerSearch } from "./styles";
+import { Container, ContainerMobile } from "./styles";
 import { MiniCart } from "../../Components/Minicart";
 import { Login } from "../../Components/Modal";
+import { Search } from "../../Components/Search";
 
 export function HeaderMobile() {
   return (
@@ -25,13 +25,7 @@ export function HeaderMobile() {
           </button>
         </li>
       </ContainerMobile>
-
-      <ContainerSearch>
-        <input type="text" placeholder="which product are you looking for?" />
-        <button>
-          <img src={IconSearch} alt="search" />
-        </button>
-      </ContainerSearch>
+      <Search />
     </Container>
   );
 }
