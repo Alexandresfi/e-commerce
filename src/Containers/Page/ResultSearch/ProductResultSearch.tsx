@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { api } from "../../services/api";
-import { formatPrices } from "../../utils/formatPrice";
-import { BuyButton } from "../BuyButton";
+import { formatPrices } from "../../../utils/formatPrice";
+import { BuyButton } from "../../../Components/BuyButton";
 
-import { ContentProducts, Img, Price, Title, ValueFrist } from "./styles";
+import {
+  ContentProducts,
+  Img,
+  Price,
+  Title,
+  ValueFrist,
+} from "../../../Components/Product/styles";
+import { UseResultSearch } from "../../../hooks/ResultSearch";
 
 export interface ProductsProps {
   id: number;
@@ -17,30 +22,9 @@ export interface ProductsProps {
   quantity: number;
 }
 
-interface ChildrenProps {
-  require: string;
-  search: boolean;
-}
-
-export function Product(props: ChildrenProps) {
-  const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
-  const [newSearch, setNewSearch] = useState(true);
+export function ProductResultSearch() {
   const navigate = useNavigate();
-
-  const GetProducts = async () => {
-    if (props.search) {
-      const { data } = await api.get(`/products/search?q=${props.require}`);
-      setProductsAPI(data.products);
-    } else {
-      const { data } = await api.get(props.require);
-      setProductsAPI(data.products);
-    }
-  };
-
-  useEffect(() => {
-    GetProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.search]);
+  const { products } = UseResultSearch();
 
   const handleLink = (id: number) => {
     localStorage.setItem("product:IdPdp", JSON.stringify(id));
@@ -49,7 +33,7 @@ export function Product(props: ChildrenProps) {
 
   return (
     <>
-      {productsAPI?.map((product) => (
+      {products?.map((product) => (
         <ContentProducts key={product.id}>
           <Img
             src={product.thumbnail}

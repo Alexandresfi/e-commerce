@@ -1,14 +1,11 @@
-import { MinicatProvider } from "./hooks/MinicartContext";
-import { UserProvider } from "./hooks/UserContext";
+import { AppProvider } from "./hooks";
 import { Rotas } from "./Router";
 
 function App() {
   return (
-    <UserProvider>
-      <MinicatProvider>
-        <Rotas />
-      </MinicatProvider>
-    </UserProvider>
+    <AppProvider>
+      <Rotas />
+    </AppProvider>
   );
 }
 
