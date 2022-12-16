@@ -17,29 +17,39 @@ export interface ProductsProps {
   quantity: number;
 }
 
-export function Product(props: { require: string }) {
+interface ChildrenProps {
+  require: string;
+  search: boolean;
+}
+
+export function Product(props: ChildrenProps) {
   const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
   const navigate = useNavigate();
 
   const GetProducts = async () => {
-    const { data } = await api.get(props.require);
-    setProductsAPI(data.products);
+    if (props.search) {
+      const { data } = await api.get(`/products/search?q=${props.require}`);
+      setProductsAPI(data.products);
+    } else {
+      const { data } = await api.get(props.require);
+      setProductsAPI(data.products);
+    }
   };
 
   useEffect(() => {
     GetProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productsAPI.length]);
+  }, [props.search]);
 
   const handleLink = (id: number) => {
     localStorage.setItem("product:IdPdp", JSON.stringify(id));
-    navigate("pdp");
+    navigate("/pdp");
   };
 
   return (
     <>
       {productsAPI?.map((product) => (
-        <ContentProducts key={product.id}>
+        <ContentProducts key={product.id} search={false}>
           <Img
             src={product.thumbnail}
             onClick={() => handleLink(product.id)}

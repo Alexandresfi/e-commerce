@@ -102,7 +102,7 @@ export const Description = styled.div`
     text-overflow: ellipsis;
     display: -webkit-box;
     line-height: 16px;    
-    max-height: 41px;     
+    max-height: 33px;     
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     font-weight: bold;

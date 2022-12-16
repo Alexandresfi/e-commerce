@@ -9,7 +9,7 @@ export function Home() {
         <p className="img2">Image 2</p>
         <p className="img3">Image 3</p>
       </ContainerBanner>
-      <Shelf require="products?limit=10" titles="Notebooks and Smartphones" />
+      <Shelf require="products?limit=10" titles="Laptops and Smartphones" />
 
       <ContainerBanner>
         <p className="img1">Image 1</p>

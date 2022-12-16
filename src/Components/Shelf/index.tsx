@@ -8,7 +8,12 @@ import {
 import Arrows from "../../assets/right-arrow.png";
 import { useRef } from "react";
 
-export function Shelf(props: { require: string; titles: string }) {
+interface ChildrenProps {
+  require: string;
+  titles: string;
+}
+
+export function Shelf(props: ChildrenProps) {
   const carrousel = useRef<HTMLDivElement>(null);
 
   const handleLeftClick = (): void => {
@@ -28,7 +33,7 @@ export function Shelf(props: { require: string; titles: string }) {
       <h1>{props.titles}</h1>
 
       <ContainerCarrousel ref={carrousel}>
-        <Product require={props.require} />
+        <Product require={props.require} search={false} />
       </ContainerCarrousel>
 
       <ContainerButtons>
