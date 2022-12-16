@@ -34,7 +34,7 @@ export function ProductResultSearch() {
   return (
     <>
       {products?.map((product) => (
-        <ContentProducts key={product.id}>
+        <ContentProducts key={product.id} search>
           <Img
             src={product.thumbnail}
             onClick={() => handleLink(product.id)}

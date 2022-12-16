@@ -44,6 +44,7 @@ export const ContentTopBar = styled.div`
 
 export const ContainerHeader = styled.div`
     background-color: white;
+    margin-bottom: 20px;
 `
 
 export const ContentHeadert = styled.div`

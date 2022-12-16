@@ -17,6 +17,7 @@ interface SearchData {
   GetSearch: (require: string) => void;
   products: ProductsProps[];
   emptySearch: boolean;
+  searchText: string;
 }
 
 const ResultSearchContext = createContext<SearchData>({} as SearchData);
@@ -24,6 +25,7 @@ const ResultSearchContext = createContext<SearchData>({} as SearchData);
 export function ResultSearchProvider({ children }: ChildrenProps) {
   const [products, setProducts] = useState<ProductsProps[]>([]);
   const [emptySearch, setEmptySearch] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const [verification, setVerification] = useState({
     search: false,
     category: false,
@@ -64,7 +66,7 @@ export function ResultSearchProvider({ children }: ChildrenProps) {
       "department:ecommerceDepartment",
       JSON.stringify(require)
     );
-
+    setSearchText(require);
     searchProduct(require);
   };
 
@@ -72,12 +74,14 @@ export function ResultSearchProvider({ children }: ChildrenProps) {
     const require = JSON.parse(
       localStorage.getItem("department:ecommerceDepartment")!
     );
-    GetSearch(require);
+    require && GetSearch(require);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <ResultSearchContext.Provider value={{ GetSearch, emptySearch, products }}>
+    <ResultSearchContext.Provider
+      value={{ GetSearch, emptySearch, products, searchText }}
+    >
       {children}
     </ResultSearchContext.Provider>
   );

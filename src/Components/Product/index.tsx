@@ -24,7 +24,6 @@ interface ChildrenProps {
 
 export function Product(props: ChildrenProps) {
   const [productsAPI, setProductsAPI] = useState<ProductsProps[]>([]);
-  const [newSearch, setNewSearch] = useState(true);
   const navigate = useNavigate();
 
   const GetProducts = async () => {
@@ -50,7 +49,7 @@ export function Product(props: ChildrenProps) {
   return (
     <>
       {productsAPI?.map((product) => (
-        <ContentProducts key={product.id}>
+        <ContentProducts key={product.id} search={false}>
           <Img
             src={product.thumbnail}
             onClick={() => handleLink(product.id)}

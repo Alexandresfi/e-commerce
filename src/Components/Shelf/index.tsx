@@ -11,7 +11,6 @@ import { useRef } from "react";
 interface ChildrenProps {
   require: string;
   titles: string;
-  search: boolean;
 }
 
 export function Shelf(props: ChildrenProps) {

@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
+interface SearchProps {
+    search:boolean
+}
 
-export const ContentProducts = styled.div`
+export const ContentProducts = styled.div<SearchProps>`
     max-width: 18.75rem;
     width: 100%;
 
@@ -29,7 +32,7 @@ export const ContentProducts = styled.div`
     }
 
     @media (max-width: 913px) {
-        max-width: 10.75rem;
+        max-width: ${(props)=> props.search ? '11.75rem': '11.9rem'};
     }
 `
 
@@ -48,19 +51,18 @@ export const Img = styled.img`
 export const Title = styled.p`
     font-weight: bold;
     text-align: left;
+    line-height: 16px;    
 
     font-size: 1.2rem;
     letter-spacing: 0.05em;
-    line-height: 20px;
     margin: 10px 0;
 
-    min-height: 41px;
+    min-height: 33px;
+    max-height: 33px;
 
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-height: 16px;    
-    max-height: 41px;     
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 `

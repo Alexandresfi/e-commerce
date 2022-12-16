@@ -1,22 +1,27 @@
 import { ContainerSearch } from "./styles";
 import IconSearch from "../../assets/search.png";
 
-import { useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UseResultSearch } from "../../hooks/ResultSearch";
 
 export function Search() {
-  const refInput = useRef<HTMLInputElement>(null);
+  const [valueInput, setValueInput] = useState(" ");
   const navigate = useNavigate();
   const { GetSearch } = UseResultSearch();
 
   const handleSearch = () => {
-    if (refInput.current?.value === " " || refInput.current?.value === "") {
+    if (valueInput === " " || valueInput === "") {
       alert("The field is empty, please enter what you are looking for");
     } else {
-      GetSearch(refInput.current?.value!);
+      GetSearch(valueInput);
+      setValueInput(" ");
       navigate("/search-result");
     }
+  };
+
+  const handleChangeText = (value: string) => {
+    setValueInput(value);
   };
 
   return (
@@ -24,7 +29,7 @@ export function Search() {
       <input
         type="text"
         placeholder="which product are you looking for?"
-        ref={refInput}
+        onChange={(e) => handleChangeText(e.target.value)}
       />
       <button onClick={handleSearch}>
         <img src={IconSearch} alt="search" />
