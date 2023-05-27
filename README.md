@@ -59,7 +59,7 @@ Abra o git bash em uma pasta da sua escolha e execute o comando:
 git clone https://github.com/Alexandresfi/e-commerce.git
 ```
 
-Em seguida vá para a pasta `/src` e abra o terminal e execute:
+Em seguida vá para a pasta raiz do projeto e abra o terminal e execute:
 
 ```md
 yarn
